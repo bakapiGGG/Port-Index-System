@@ -484,6 +484,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }, 0);
   }
 
+  setBrokers() {
+    this.selectedStakeholder = 'Stakeholder: Brokers';
+    this.gridApi.setFilterModel({
+      Stakeholder: { type: 'set', values: ['Brokers'] },
+    });
+    this.gridApi.onFilterChanged();
+    setTimeout(() => {
+      this.gridApi.refreshCells();
+    }, 0);
+  }
+
   clearStakeholders() {
     this.selectedStakeholder = 'Stakeholder';
     this.gridApi.setFilterModel({ Stakeholder: null });
