@@ -33,6 +33,20 @@ interface DataRow {
 export class DashboardComponent implements OnInit, OnDestroy {
   @ViewChild('efficiencyModal') efficiencyModal!: ElementRef;
 
+  // uniqueContainerPorts: string[] = [
+  //   'Singapore (Singapore)',
+  //   'Shanghai (China)',
+  //   'Rotterdam (Netherlands)',
+  //   'Antwerp (Belgium)',
+  //   'Busan (South Korea)',
+  //   'Ningbo-Zhoushan (China)',
+  //   'Shenzhen (China)',
+  //   'Los Angeles (United States)',
+  //   'Hong Kong (China)',
+  //   'Dubai (United Arab Emirates)',
+  //   'Los Angeles (United States)',
+  // ];
+
   uniqueContainerPorts: string[] = [
     'Singapore (Singapore)',
     'Shanghai (China)',
@@ -45,7 +59,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     'Hong Kong (China)',
     'Dubai (United Arab Emirates)',
     'Los Angeles (United States)',
+    'Hamburg (Germany)',
   ];
+
   
   calculateEfficiencyOnly: boolean = false;
   calculateSmartnessOnly: boolean = false;
@@ -451,6 +467,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }, 0);
   }
 
+  setSMC() {
+    this.selectedStakeholder = 'Stakeholder: Ship Management Companies';
+    this.gridApi.setFilterModel({
+      Stakeholder: { type: 'set', values: ['Ship Management Companies'] },
+    });
+    this.gridApi.onFilterChanged();
+    setTimeout(() => {
+      this.gridApi.refreshCells();
+    }, 0);
+  }
+
   setRegulator() {
     this.selectedStakeholder = 'Stakeholder: Regulator';
     this.gridApi.setFilterModel({
@@ -505,7 +532,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchCSV() {
-    this.http.get('assets/data.csv', { responseType: 'text' }).subscribe(
+    this.http.get('assets/data_final.csv', { responseType: 'text' }).subscribe(
       (data) => {
         let parsedData = Papa.parse(data, {
           header: true,

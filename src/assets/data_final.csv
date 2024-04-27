@@ -29,16 +29,16 @@ ID,Name,Stakeholder,City,Efficiency,Smartness,Greenness,Resilience
 28,Rajesh,Logistics Partners,Hong Kong (China),7,7.5,6,5
 29,Rajesh,Logistics Partners,Ningbo-Zhoushan (China),7,7,7,5
 30,Rajesh,Logistics Partners,Dubai (United Arab Emirates),8,6,5,6
-31,James,Regulators,Singapore (Singapore),8.5,8,7,7
-32,James,Regulators,Rotterdam (Netherlands),8,8,8,8
-33,James,Regulators,Shanghai (China),8.5,8,7.5,6
-34,James,Regulators,Busan (South Korea),9,9,5,5
-35,James,Regulators,Los Angeles (United States),8.5,8.5,5,6
-36,James,Regulators,Hamburg (Germany),7.5,7,7.5,8
-37,James,Regulators,Antwerp (Belgium),8,7,5,5
-38,James,Regulators,Hong Kong (China),7.5,7,7,5
-39,James,Regulators,Ningbo-Zhoushan (China),7,6,6,5
-40,James,Regulators,Dubai (United Arab Emirates),7,6,6,6
+31,James,Regulator,Singapore (Singapore),8.5,8,7,7
+32,James,Regulator,Rotterdam (Netherlands),8,8,8,8
+33,James,Regulator,Shanghai (China),8.5,8,7.5,6
+34,James,Regulator,Busan (South Korea),9,9,5,5
+35,James,Regulator,Los Angeles (United States),8.5,8.5,5,6
+36,James,Regulator,Hamburg (Germany),7.5,7,7.5,8
+37,James,Regulator,Antwerp (Belgium),8,7,5,5
+38,James,Regulator,Hong Kong (China),7.5,7,7,5
+39,James,Regulator,Ningbo-Zhoushan (China),7,6,6,5
+40,James,Regulator,Dubai (United Arab Emirates),7,6,6,6
 41,Ron,Shippers,Singapore (Singapore),9,9,9,9.5
 42,Ron,Shippers,Rotterdam (Netherlands),8,8.5,9,9
 43,Ron,Shippers,Shanghai (China),8.5,8,7.5,8.5
