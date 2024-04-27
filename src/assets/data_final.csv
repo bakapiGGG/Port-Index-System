@@ -1,0 +1,51 @@
+ID,Name,Stakeholder,City,Efficiency,Smartness,Greenness,Resilience
+1,John,Port Operators,Singapore (Singapore),9.5,9,8,8
+2,John,Port Operators,Rotterdam (Netherlands),9,8,8,8
+3,John,Port Operators,Shanghai (China),9.5,8,7,7
+4,John,Port Operators,Busan (South Korea),9.5,9,6,6
+5,John,Port Operators,Los Angeles (United States),9,8.5,7,8
+6,John,Port Operators,Hamburg (Germany),8,8,8,7
+7,John,Port Operators,Antwerp (Belgium),8,8,6,7
+8,John,Port Operators,Hong Kong (China),8,8,7,6
+9,John,Port Operators,Ningbo-Zhoushan (China),8,7,5,6
+10,John,Port Operators,Dubai (United Arab Emirates),9,6,5,5
+11,Michael,Ship Management Companies,Singapore (Singapore),9,8,8,8
+12,Michael,Ship Management Companies,Rotterdam (Netherlands),9.5,7,7,8
+13,Michael,Ship Management Companies,Shanghai (China),9,8,8,7
+14,Michael,Ship Management Companies,Busan (South Korea),9,8.5,5,6
+15,Michael,Ship Management Companies,Los Angeles (United States),8.5,8.5,6,6.5
+16,Michael,Ship Management Companies,Hamburg (Germany),7.5,7.5,7,8
+17,Michael,Ship Management Companies,Antwerp (Belgium),8.5,8,7,7
+18,Michael,Ship Management Companies,Hong Kong (China),7.5,7,6,7
+19,Michael,Ship Management Companies,Ningbo-Zhoushan (China),7,7,5,6
+20,Michael,Ship Management Companies,Dubai (United Arab Emirates),7.5,5,6,5
+21,Rajesh,Logistics Partners,Singapore (Singapore),9,8,8,8
+22,Rajesh,Logistics Partners,Rotterdam (Netherlands),8,8,7.5,8
+23,Rajesh,Logistics Partners,Shanghai (China),8.5,7.5,9,7.5
+24,Rajesh,Logistics Partners,Busan (South Korea),8.5,8,5,5
+25,Rajesh,Logistics Partners,Los Angeles (United States),8,7.5,6,7
+26,Rajesh,Logistics Partners,Hamburg (Germany),7,7.5,7,7
+27,Rajesh,Logistics Partners,Antwerp (Belgium),8,7.5,4,6
+28,Rajesh,Logistics Partners,Hong Kong (China),7,7.5,6,5
+29,Rajesh,Logistics Partners,Ningbo-Zhoushan (China),7,7,7,5
+30,Rajesh,Logistics Partners,Dubai (United Arab Emirates),8,6,5,6
+31,James,Regulators,Singapore (Singapore),8.5,8,7,7
+32,James,Regulators,Rotterdam (Netherlands),8,8,8,8
+33,James,Regulators,Shanghai (China),8.5,8,7.5,6
+34,James,Regulators,Busan (South Korea),9,9,5,5
+35,James,Regulators,Los Angeles (United States),8.5,8.5,5,6
+36,James,Regulators,Hamburg (Germany),7.5,7,7.5,8
+37,James,Regulators,Antwerp (Belgium),8,7,5,5
+38,James,Regulators,Hong Kong (China),7.5,7,7,5
+39,James,Regulators,Ningbo-Zhoushan (China),7,6,6,5
+40,James,Regulators,Dubai (United Arab Emirates),7,6,6,6
+41,Ron,Shippers,Singapore (Singapore),9,9,9,9.5
+42,Ron,Shippers,Rotterdam (Netherlands),8,8.5,9,9
+43,Ron,Shippers,Shanghai (China),8.5,8,7.5,8.5
+44,Ron,Shippers,Busan (South Korea),9,9,8,8.5
+45,Ron,Shippers,Los Angeles (United States),8,8,8,8
+46,Ron,Shippers,Hamburg (Germany),8,7.5,7.5,8.5
+47,Ron,Shippers,Antwerp (Belgium),8,7.5,7,7.5
+48,Ron,Shippers,Hong Kong (China),7,7,7,7.5
+49,Ron,Shippers,Ningbo-Zhoushan (China),7.5,7,7.5,8
+50,Ron,Shippers,Dubai (United Arab Emirates),8,7,6.5,7
