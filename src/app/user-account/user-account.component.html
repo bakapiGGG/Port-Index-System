@@ -1,0 +1,149 @@
+<div class="container-fluid mt-1 bg-img">
+    <h1 class="sticky-top">User Account</h1>
+    <br />
+    <br />
+    <p>
+        Create your user account to participate and contribute to the development of the global port index system. Your
+        registration allows us to offer updates about the project,
+        interact with our platform and opportunities to influence future port rankings. Upon approval of registration,
+        we use the emails and data
+        for an upgraded version of the port index system.
+    </p>
+    <br />
+    <p>
+        <b>
+            Register now to make an impact and drive excellence in the maritime
+            industry !
+        </b>
+    </p>
+    <br />
+    <br />
+
+
+    <div class="card" style="width: 90%; margin: 0 auto;">
+        <div class="card-body d-flex">
+            <div style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 50vh;
+                    width: 50%;
+                    ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                <br>
+                <h2 class="card-title text-center" style="color: white">
+                    Would you like to join us as an expert?
+                </h2>
+            </div>
+            <div 
+                style="border-left: 3px solid white; 
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+                        ">
+
+                <div class="container text-center d-flex flex-column">
+                    <!-- Your form goes here -->
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+                    <div class="row mb-4 mt-3">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="nameInput" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Name:</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="nameInput" formControlName="name">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="salutationSelect" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Salutation:</label>
+                        </div>
+                        <div class="col-7">
+                            <select class="form-select" id="salutationSelect" formControlName="salutation">
+                                <option value="" disabled selected>Please Select ...</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mdm">Mdm</option>
+                                <option value="Miss">Miss</option>
+                                <option value="Dr">Dr</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="designationSelect" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Designation:</label>
+                        </div>
+                        <div class="col-7">
+                            <select class="form-select" id="designationSelect" formControlName="designation">
+                                <option value="" disabled selected>Please Select ...</option>
+                                <option value="Operator">Operator</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="industrySelect" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Industry:</label>
+                        </div>
+                        <div class="col-7">
+                            <select class="form-select" id="industrySelect" formControlName="industry">
+                                <option value="" disabled selected>Please Select ...</option>
+                                <option value="Logistic">Logistic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="roleSelect" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Role:</label>
+                        </div>
+                        <div class="col-7">
+                            <select class="form-select" id="roleSelect" formControlName="role">
+                                <option value="" disabled selected>Please Select ...</option>
+                                <option value="Logistic">Logistic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="experienceRange" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Experience:</label>
+                        </div>
+                        <div class="col-7 d-flex justify-content-center align-items-center">
+                            <!-- <input type="range" class="form-range" id="experienceRange" min="0" max="20" formControlName="experience" 
+                                ngbTooltip="{{tooltipText}}" (input)="updateTooltip($event.target)"> -->
+                            <input type="text" class="form-control" id="experience" formControlName="experience">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="bizEmailInput" class="col-6 col-form-label text-nowrap d-flex justify-content-start">Business E-mail:</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="bizEmailInput" formControlName="businessEmail">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4 d-flex justify-content-center">
+                            <label for="countrySelect" class="col-sm-6 col-form-label text-nowrap d-flex justify-content-start">Country:</label>
+                        </div>
+                        <div class="col-7">
+                            <input class="form-control" list="countrylistOptions" id="countryDataList" placeholder="Type to search...">
+                                <datalist id="countrylistOptions">
+                                    <option value="Singapore">
+                                    <option value="China">
+                                    <option value="United States">
+                                    <option value="Australia">
+                                </datalist>
+                        </div>
+                    </div>
+                    <!-- Add other form controls here -->
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>

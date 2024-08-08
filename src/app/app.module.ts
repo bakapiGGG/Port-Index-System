@@ -25,6 +25,8 @@ import { SmartnessModalContentComponent } from './smartness-modal-content/smartn
 import { GreennessModalContentComponent } from './greenness-modal-content/greenness-modal-content.component';
 import { ResilienceModalContentComponent } from './resilience-modal-content/resilience-modal-content.component';
 import { ScoreChartComponent } from './score-chart/score-chart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 
 
@@ -51,6 +53,7 @@ import { ScoreChartComponent } from './score-chart/score-chart.component';
     GreennessModalContentComponent,
     ResilienceModalContentComponent,
     ScoreChartComponent,
+    UserAccountComponent,
   ],
   
   imports: [
@@ -62,6 +65,7 @@ import { ScoreChartComponent } from './score-chart/score-chart.component';
     HttpClientModule,
     BsDropdownModule.forRoot(),
     NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

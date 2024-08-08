@@ -52,3 +52,13 @@ h1 {
   margin-bottom: 25px !important;
   /* padding: 10px; */
 }
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.message {
+  width: 100%;
+}
