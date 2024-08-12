@@ -27,6 +27,7 @@ import { ResilienceModalContentComponent } from './resilience-modal-content/resi
 import { ScoreChartComponent } from './score-chart/score-chart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { ExcelDatabaseComponent } from './excel-database/excel-database.component';
 
 
 
@@ -54,6 +55,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
     ResilienceModalContentComponent,
     ScoreChartComponent,
     UserAccountComponent,
+    ExcelDatabaseComponent,
   ],
   
   imports: [

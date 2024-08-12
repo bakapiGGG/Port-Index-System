@@ -1,0 +1,98 @@
+/* .container {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+} */
+
+.container-fluid {
+    width: 100%;
+    /* Full width */
+    min-height: 100vh; /* If use height selector it will fix the height instead need to min-height so that the height can be adjusted according to the content */
+    /* Full height */
+    /* overflow: auto; */
+    /* Add a scrollbar if the content overflows */
+    padding-top: 75px;
+    text-align: left;
+    
+}
+
+.heading, .list {
+    text-align: left;
+    
+}
+
+.image {
+    width: auto;
+    height: 400px;
+    margin-left: auto;
+    margin-right: 50px;
+
+}
+
+.sticky-top {
+    color: cadetblue;
+}
+
+.text-container {
+    /* display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */ 
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+/* .text-container > * {
+    margin-bottom: 0;
+    padding-bottom: 0;
+} */
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 36px;
+    color: white;
+    margin-top: 0;
+    
+}
+
+.bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../src/assets/sea.jpg'); /* Create a semi-transparent black layer */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.container-fluid p {
+    font-size: 20px;
+    color: white;
+}
+
+.container-fluid ul {
+    font-size: 20px;
+    color: white;
+}
+
+.container-fluid .obj{
+   
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    max-height: 50px;
+    overflow: hidden;
+    
+
+}
+
+.wrapper {
+    max-height: 350px; /* Replace with your desired maximum height */
+    overflow: hidden; /* Hide overflow content */
+}

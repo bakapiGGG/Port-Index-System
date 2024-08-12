@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { ExcelDatabaseComponent} from './excel-database/excel-database.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login-user', component: LoginUserComponent},
   { path: 'login-admin', component: LoginAdminComponent},
   { path: 'user-account', component: UserAccountComponent},
+  { path: 'upload-excel', component: ExcelDatabaseComponent},
   { path: '', component: HomeComponent} // Default Route
 ];
 
