@@ -18,6 +18,7 @@ interface DataRow {
   Name: string;
   Stakeholder: string;
   City: string;
+  Country: string;
   Efficiency: number;
   Smartness: number;
   Greenness: number;
@@ -45,21 +46,32 @@ export class DashboardComponent implements OnInit, OnDestroy {
   //   'Hong Kong (China)',
   //   'Dubai (United Arab Emirates)',
   //   'Los Angeles (United States)',
+  //   'Hamburg (Germany)',
   // ];
 
   uniqueContainerPorts: string[] = [
-    'Singapore (Singapore)',
-    'Shanghai (China)',
-    'Rotterdam (Netherlands)',
-    'Antwerp (Belgium)',
-    'Busan (South Korea)',
-    'Ningbo-Zhoushan (China)',
-    'Shenzhen (China)',
-    'Los Angeles (United States)',
-    'Hong Kong (China)',
-    'Dubai (United Arab Emirates)',
-    'Los Angeles (United States)',
-    'Hamburg (Germany)',
+    'Shanghai',
+    'Singapore',
+    'Ningbo Zhoushan',
+    'Shenzhen',
+    'Qingdao',
+    'Guangzhou',
+    'Busan',
+    'Tianjin',
+    'Hong Kong',
+    'Rotterdam',
+    'Jabel Ali',
+    'Antwerp-Bruges',
+    'Port Klang',
+    'Xiamen',
+    'Tanjung Pelepas',
+    'Kaohsiung',
+    'Los Angeles',
+    'New York and New Jersey',
+    'Long Beach',
+    'Laem Chabang',
+    'Singapore'
+
   ];
 
   
@@ -101,16 +113,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     if (this.counter % 4 == 1) {
       // return "Efficiency" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1) * 10 + '%' + '\n\n' + 'E';
+      return params.value.toFixed(1)  + '%' + '\n\n' + 'E';
     } else if (this.counter % 4 == 2) {
       // return "Smartness" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1) * 10 + '%' + '\n\n' + 'S';
+      return params.value.toFixed(1)  + '%' + '\n\n' + 'S';
     } else if (this.counter % 4 == 3) {
       // return "Greenness" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1) * 10 + '%' + '\n\n' + 'G';
+      return params.value.toFixed(1)  + '%' + '\n\n' + 'G';
     } else {
       // return "Resilience" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1) * 10 + '%' + '\n\n' + 'R';
+      return params.value.toFixed(1)  + '%' + '\n\n' + 'R';
     }
   };
 
@@ -141,6 +153,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     },
     { field: 'ID', headerName: 'ID', hide: true },
     { field: 'Name', headerName: 'Name', hide: true },
+    
     {
       field: 'City',
       headerName: 'City',
@@ -165,11 +178,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
         const smartness = Number(params.getValue('Smartness')) || 0;
         const greenness = Number(params.getValue('Greenness')) || 0;
         const resilience = Number(params.getValue('Resilience')) || 0;
-        const weightedAverage =
-          3.3673 * efficiency +
-          2.7551 * smartness +
-          1.99 * greenness +
-          1.878 * resilience;
+        // const weightedAverage =
+        //   3.3673 * efficiency +
+        //   2.7551 * smartness +
+        //   1.99 * greenness +
+        //   1.878 * resilience;
+
+        const weightedAverage = efficiency + smartness + greenness + resilience;
 
         // Debugging purposes
         // console.log('Efficiency:', efficiency);
@@ -399,6 +414,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = false;
     this.selectedIndicator = 'Indicators: Efficiency';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
+    // this.gridApi.setColumnsVisible(['Country'], true); 
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       // defaultState: { sort: null },
@@ -532,7 +548,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchCSV() {
-    this.http.get('assets/data_final.csv', { responseType: 'text' }).subscribe(
+    // this.http.get('assets/data_final.csv', { responseType: 'text' }).subscribe(
+      this.http.get('assets/database.csv', { responseType: 'text' }).subscribe(
       (data) => {
         let parsedData = Papa.parse(data, {
           header: true,
