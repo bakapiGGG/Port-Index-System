@@ -551,7 +551,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setRegulator() {
     this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Regulator';
+    this.selectedStakeholder = 'Stakeholder: Regulators';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
