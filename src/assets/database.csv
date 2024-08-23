@@ -1,101 +1,101 @@
 ID,City,Country,Stakeholder,Efficiency,Smartness,Greenness,Resilience
-1,Shanghai,China,Port Operators,29.39183333,20.862,17.432,20.112
-2,Singapore,Singapore,Port Operators,26.91844,23.18,19.611,22.626
-3,Ningbo Zhoushan,China,Port Operators,24.35126344,18.544,15.253,22.626
-4,Shenzhen,China,Port Operators,22.4539658,18.544,15.253,20.112
-5,Qingdao,China,Port Operators,17.9471516,23.18,17.432,22.626
-6,Guangzhou,China,Port Operators,23.0882316,23.18,17.432,22.626
-7,Busan,Korea,Port Operators,24.3748,18.544,15.253,20.112
-8,Tianjin,China,Port Operators,21.89116699,23.18,19.611,22.626
-9,Hong Kong,China,Port Operators,20.45678574,20.862,17.432,20.112
-10,Rotterdam,Netherlands,Port Operators,16.36293178,23.18,19.611,22.626
-11,Jabel Ali,United Arab Emirates,Port Operators,19.6141169,18.544,17.432,20.112
-12,Antwerp-Bruges,Netherlands,Port Operators,16.45524207,20.862,17.432,21.4193
-13,Port Klang,Malaysia,Port Operators,19.5992526,16.226,13.074,20.112
-14,Xiamen,China,Port Operators,18.32237073,20.862,15.253,20.112
-15,Tanjung Pelepas,Malaysia,Port Operators,22.2575885,18.544,15.253,22.626
-16,Los Angeles,USA,Port Operators,18.2170583,18.544,17.432,22.626
-17,New York and New Jersey,USA,Port Operators,21.864535,16.226,17.432,22.626
-18,Kaohsiung,China,Port Operators,18.30264333,20.862,17.432,18.80472
-19,Long Beach,USA,Port Operators,21.66626467,20.862,19.611,20.112
-20,Laem Chabang,USA,Port Operators,18.86258267,16.226,13.074,17.598
-21,Shanghai,China,Logistics Partners,29.39183333,20.862,17.432,20.112
-22,Singapore,Singapore,Logistics Partners,26.91844,23.18,19.611,22.626
-23,Ningbo Zhoushan,China,Logistics Partners,24.35126344,18.544,15.253,20.112
-24,Shenzhen,China,Logistics Partners,22.20488247,20.862,17.432,20.112
-25,Qingdao,China,Logistics Partners,17.9471516,18.544,15.253,20.112
-26,Guangzhou,China,Logistics Partners,22.83914827,20.862,17.432,20.112
-27,Busan,Korea,Logistics Partners,24.3748,18.544,15.253,20.112
-28,Tianjin,China,Logistics Partners,22.14025032,20.862,17.432,20.112
-29,Hong Kong,China,Logistics Partners,20.70586908,20.862,15.253,20.112
-30,Rotterdam,Netherlands,Logistics Partners,16.36293178,20.862,17.432,20.112
-31,Jabel Ali,United Arab Emirates,Logistics Partners,19.36503357,20.862,17.432,22.626
-32,Antwerp-Bruges,Netherlands,Logistics Partners,16.95340873,20.862,17.432,20.112
-33,Port Klang,Malaysia,Logistics Partners,19.35016927,17.43136,14.20708,17.598
-34,Xiamen,China,Logistics Partners,18.0732874,20.862,15.253,20.112
-35,Tanjung Pelepas,Malaysia,Logistics Partners,22.50667183,18.544,15.253,22.626
-36,Los Angeles,USA,Logistics Partners,17.71889163,20.862,17.432,17.598
-37,New York and New Jersey,USA,Logistics Partners,21.864535,18.544,15.253,20.112
-38,Kaohsiung,China,Logistics Partners,18.30264333,20.862,17.432,20.112
-39,Long Beach,USA,Logistics Partners,21.66626467,19.65664,19.611,20.112
-40,Laem Chabang,USA,Logistics Partners,18.86258267,16.226,17.432,17.598
-41,Shanghai,China,Ship Management Companies,29.14275,20.862,17.432,20.112
-42,Singapore,Singapore,Ship Management Companies,26.91844,23.18,19.611,22.626
-43,Ningbo Zhoushan,China,Ship Management Companies,24.60034677,20.862,17.432,20.112
-44,Shenzhen,China,Ship Management Companies,21.95579913,18.544,15.253,17.598
-45,Qingdao,China,Ship Management Companies,17.69806827,20.862,17.432,20.112
-46,Guangzhou,China,Ship Management Companies,22.83914827,20.862,17.432,20.112
-47,Busan,Korea,Ship Management Companies,24.3748,20.862,17.432,20.112
-48,Tianjin,China,Ship Management Companies,22.14025032,23.18,19.611,20.112
-49,Hong Kong,China,Ship Management Companies,20.20770241,18.544,15.253,15.084
-50,Rotterdam,Netherlands,Ship Management Companies,16.36293178,23.18,17.432,22.626
-51,Jabel Ali,United Arab Emirates,Ship Management Companies,19.6141169,20.862,17.432,22.626
-52,Antwerp-Bruges,Netherlands,Ship Management Companies,16.7043254,20.862,15.253,20.112
-53,Port Klang,Malaysia,Ship Management Companies,19.35016927,16.226,13.074,17.598
-54,Xiamen,China,Ship Management Companies,18.32237073,20.862,17.432,20.112
-55,Tanjung Pelepas,Malaysia,Ship Management Companies,22.2575885,18.544,17.432,22.626
-56,Los Angeles,USA,Ship Management Companies,17.71889163,20.862,17.432,20.112
-57,New York and New Jersey,USA,Ship Management Companies,21.864535,18.544,17.432,22.626
-58,Kaohsiung,China,Ship Management Companies,18.55172667,20.862,17.432,20.112
-59,Long Beach,USA,Ship Management Companies,21.41718133,20.862,19.611,20.112
-60,Laem Chabang,USA,Ship Management Companies,18.61349933,18.544,15.253,17.598
-61,Shanghai,China,Regulator,29.39183333,20.862,17.432,20.112
-62,Singapore,Singapore,Regulator,26.91844,21.97464,18.56508,22.626
-63,Ningbo Zhoushan,China,Regulator,24.60034677,18.544,15.253,22.626
-64,Shenzhen,China,Regulator,21.95579913,20.862,17.432,17.598
-65,Qingdao,China,Regulator,17.9471516,21.97464,18.56508,20.112
-66,Guangzhou,China,Regulator,22.83914827,20.862,17.432,20.112
-67,Busan,Korea,Regulator,24.3748,18.544,17.432,22.626
-68,Tianjin,China,Regulator,21.64208366,20.862,19.611,20.112
-69,Hong Kong,China,Regulator,20.70586908,20.862,15.253,20.112
-70,Rotterdam,Netherlands,Regulator,16.36293178,20.862,17.432,20.112
-71,Jabel Ali,United Arab Emirates,Regulator,19.36503357,20.862,17.432,20.112
-72,Antwerp-Bruges,Netherlands,Regulator,16.7043254,20.862,17.432,20.112
-73,Port Klang,Malaysia,Regulator,19.10108594,18.544,15.253,20.112
-74,Xiamen,China,Regulator,18.32237073,20.862,15.253,20.112
-75,Tanjung Pelepas,Malaysia,Regulator,22.50667183,18.544,15.253,20.112
-76,Los Angeles,USA,Regulator,18.2170583,20.862,17.432,20.112
-77,New York and New Jersey,USA,Regulator,21.864535,20.862,17.432,22.626
-78,Kaohsiung,China,Regulator,18.55172667,20.862,17.432,20.112
-79,Long Beach,USA,Regulator,22.16443133,20.862,19.611,20.112
-80,Laem Chabang,USA,Regulator,18.86258267,16.226,17.432,17.598
-81,Shanghai,China,Shippers,28.64458333,20.862,17.432,17.598
-82,Singapore,Singapore,Shippers,26.91844,20.862,17.432,22.626
-83,Ningbo Zhoushan,China,Shippers,24.60034677,18.544,15.253,21.4193
-84,Shenzhen,China,Shippers,21.45763247,19.74936,15.253,18.90528
-85,Qingdao,China,Shippers,17.69806827,20.862,17.432,20.112
-86,Guangzhou,China,Shippers,23.0882316,23.18,17.432,22.626
-87,Busan,Korea,Shippers,24.1257135,20.862,16.38608,20.112
-88,Tianjin,China,Shippers,22.14025032,23.18,19.611,20.112
-89,Hong Kong,China,Shippers,20.20770241,18.544,13.074,17.598
-90,Rotterdam,Netherlands,Shippers,16.36293178,18.544,17.432,22.626
-91,Jabel Ali,United Arab Emirates,Shippers,19.36503357,20.862,17.432,22.626
-92,Antwerp-Bruges,Netherlands,Shippers,17.20249207,20.862,17.432,20.112
-93,Port Klang,Malaysia,Shippers,19.5992526,16.226,13.074,17.598
-94,Xiamen,China,Shippers,18.57145407,20.862,17.432,20.112
-95,Tanjung Pelepas,Malaysia,Shippers,22.50667183,18.544,15.253,20.112
-96,Los Angeles,USA,Shippers,17.71889163,20.862,19.611,20.112
-97,New York and New Jersey,USA,Shippers,21.864535,16.226,19.611,20.112
-98,Kaohsiung,China,Shippers,18.55172667,20.862,17.432,22.626
-99,Long Beach,USA,Shippers,21.66626467,20.862,19.611,20.112
-100,Laem Chabang,USA,Shippers,18.61349933,20.862,17.432,20.112
+1,Shanghai,China,Port Operators,29.39183333,20.862,17.432,22.626
+2,Singapore,Singapore,Port Operators,26.91844,23.18,19.611,23.3935
+3,Ningbo Zhoushan,China,Port Operators,24.35126344,18.544,15.253,22.1147
+4,Shenzhen,China,Port Operators,22.4539658,18.544,15.253,14.676
+5,Qingdao,China,Port Operators,17.9471516,23.18,17.432,18.5674
+6,Guangzhou,China,Port Operators,23.0882316,23.18,17.432,11.3595
+7,Busan,Korea,Port Operators,24.3748,18.544,15.253,20.106
+8,Tianjin,China,Port Operators,21.89116699,23.18,19.611,16.4918
+9,Hong Kong,China,Port Operators,20.45678574,20.862,17.432,16.8991
+10,Rotterdam,Netherlands,Port Operators,16.36293178,23.18,19.611,17.2878
+11,Jabel Ali,United Arab Emirates,Port Operators,19.6141169,18.544,17.432,14.4915
+12,Antwerp-Bruges,Netherlands,Port Operators,16.45524207,20.862,17.432,16.1336
+13,Port Klang,Malaysia,Port Operators,19.5992526,16.226,13.074,16.3015
+14,Xiamen,China,Port Operators,18.32237073,20.862,15.253,15.3112
+15,Tanjung Pelepas,Malaysia,Port Operators,22.2575885,18.544,15.253,14.6735
+16,Los Angeles,USA,Port Operators,18.2170583,18.544,17.432,12.9001
+17,New York and New Jersey,USA,Port Operators,21.864535,16.226,17.432,14.339
+18,Kaohsiung,China,Port Operators,18.30264333,20.862,17.432,14.5812
+19,Long Beach,USA,Port Operators,21.66626467,20.862,19.611,11.3836
+20,Laem Chabang,USA,Port Operators,18.86258267,16.226,13.074,12.8184
+21,Shanghai,China,Logistics Partners,29.39183333,20.862,17.432,22.626
+22,Singapore,Singapore,Logistics Partners,26.91844,23.18,19.611,23.3935
+23,Ningbo Zhoushan,China,Logistics Partners,24.35126344,18.544,15.253,20.8577
+24,Shenzhen,China,Logistics Partners,22.20488247,20.862,17.432,14.676
+25,Qingdao,China,Logistics Partners,17.9471516,18.544,15.253,17.3104
+26,Guangzhou,China,Logistics Partners,22.83914827,20.862,17.432,10.1025
+27,Busan,Korea,Logistics Partners,24.3748,18.544,15.253,20.106
+28,Tianjin,China,Logistics Partners,22.14025032,20.862,17.432,15.2348
+29,Hong Kong,China,Logistics Partners,20.70586908,20.862,15.253,16.8991
+30,Rotterdam,Netherlands,Logistics Partners,16.36293178,20.862,17.432,16.0308
+31,Jabel Ali,United Arab Emirates,Logistics Partners,19.36503357,20.862,17.432,15.7485
+32,Antwerp-Bruges,Netherlands,Logistics Partners,16.95340873,20.862,17.432,15.48
+33,Port Klang,Malaysia,Logistics Partners,19.35016927,17.43136,14.20708,15.0445
+34,Xiamen,China,Logistics Partners,18.0732874,20.862,15.253,15.3112
+35,Tanjung Pelepas,Malaysia,Logistics Partners,22.50667183,18.544,15.253,14.6735
+36,Los Angeles,USA,Logistics Partners,17.71889163,20.862,17.432,10.3861
+37,New York and New Jersey,USA,Logistics Partners,21.864535,18.544,15.253,13.082
+38,Kaohsiung,China,Logistics Partners,18.30264333,20.862,17.432,15.2348
+39,Long Beach,USA,Logistics Partners,21.66626467,19.65664,19.611,11.3836
+40,Laem Chabang,USA,Logistics Partners,18.86258267,16.226,17.432,12.8184
+42,Singapore,Singapore,Ship Management Companies,26.91844,23.18,19.611,23.3935
+41,Shanghai,China,Ship Management Companies,29.14275,20.862,17.432,22.626
+48,Tianjin,China,Ship Management Companies,22.14025032,23.18,19.611,15.2348
+43,Ningbo Zhoushan,China,Ship Management Companies,24.60034677,20.862,17.432,20.8577
+47,Busan,Korea,Ship Management Companies,24.3748,20.862,17.432,20.106
+59,Long Beach,USA,Ship Management Companies,21.41718133,20.862,19.611,11.3836
+46,Guangzhou,China,Ship Management Companies,22.83914827,20.862,17.432,10.1025
+55,Tanjung Pelepas,Malaysia,Ship Management Companies,22.2575885,18.544,17.432,14.6735
+51,Jabel Ali,United Arab Emirates,Ship Management Companies,19.6141169,20.862,17.432,15.7485
+57,New York and New Jersey,USA,Ship Management Companies,21.864535,18.544,17.432,14.339
+50,Rotterdam,Netherlands,Ship Management Companies,16.36293178,23.18,17.432,17.2878
+58,Kaohsiung,China,Ship Management Companies,18.55172667,20.862,17.432,15.2348
+54,Xiamen,China,Ship Management Companies,18.32237073,20.862,17.432,15.3112
+56,Los Angeles,USA,Ship Management Companies,17.71889163,20.862,17.432,11.6431
+45,Qingdao,China,Ship Management Companies,17.69806827,20.862,17.432,17.3104
+44,Shenzhen,China,Ship Management Companies,21.95579913,18.544,15.253,13.419
+52,Antwerp-Bruges,Netherlands,Ship Management Companies,16.7043254,20.862,15.253,15.48
+60,Laem Chabang,USA,Ship Management Companies,18.61349933,18.544,15.253,12.8184
+49,Hong Kong,China,Ship Management Companies,20.20770241,18.544,15.253,14.3851
+53,Port Klang,Malaysia,Ship Management Companies,19.35016927,16.226,13.074,15.0445
+61,Shanghai,China,Regulator,29.39183333,20.862,17.432,22.626
+62,Singapore,Singapore,Regulator,26.91844,21.97464,18.56508,23.3935
+63,Ningbo Zhoushan,China,Regulator,24.60034677,18.544,15.253,22.1147
+64,Shenzhen,China,Regulator,21.95579913,20.862,17.432,13.419
+65,Qingdao,China,Regulator,17.9471516,21.97464,18.56508,17.3104
+66,Guangzhou,China,Regulator,22.83914827,20.862,17.432,10.1025
+67,Busan,Korea,Regulator,24.3748,18.544,17.432,21.363
+68,Tianjin,China,Regulator,21.64208366,20.862,19.611,15.2348
+69,Hong Kong,China,Regulator,20.70586908,20.862,15.253,16.8991
+70,Rotterdam,Netherlands,Regulator,16.36293178,20.862,17.432,16.0308
+71,Jabel Ali,United Arab Emirates,Regulator,19.36503357,20.862,17.432,14.4915
+72,Antwerp-Bruges,Netherlands,Regulator,16.7043254,20.862,17.432,15.48
+73,Port Klang,Malaysia,Regulator,19.10108594,18.544,15.253,16.3015
+74,Xiamen,China,Regulator,18.32237073,20.862,15.253,15.3112
+75,Tanjung Pelepas,Malaysia,Regulator,22.50667183,18.544,15.253,13.4165
+76,Los Angeles,USA,Regulator,18.2170583,20.862,17.432,11.6431
+77,New York and New Jersey,USA,Regulator,21.864535,20.862,17.432,14.339
+78,Kaohsiung,China,Regulator,18.55172667,20.862,17.432,15.2348
+79,Long Beach,USA,Regulator,22.16443133,20.862,19.611,11.3836
+80,Laem Chabang,USA,Regulator,18.86258267,16.226,17.432,12.8184
+81,Shanghai,China,Shippers,28.64458333,20.862,17.432,21.369
+82,Singapore,Singapore,Shippers,26.91844,20.862,17.432,23.3935
+83,Ningbo Zhoushan,China,Shippers,24.60034677,18.544,15.253,21.5113
+84,Shenzhen,China,Shippers,21.45763247,19.74936,15.253,14.0726
+85,Qingdao,China,Shippers,17.69806827,20.862,17.432,17.3104
+86,Guangzhou,China,Shippers,23.0882316,23.18,17.432,11.3595
+87,Busan,Korea,Shippers,24.1257135,20.862,16.38608,20.106
+88,Tianjin,China,Shippers,22.14025032,23.18,19.611,15.2348
+89,Hong Kong,China,Shippers,20.20770241,18.544,13.074,15.6421
+90,Rotterdam,Netherlands,Shippers,16.36293178,18.544,17.432,17.2878
+91,Jabel Ali,United Arab Emirates,Shippers,19.36503357,20.862,17.432,15.7485
+92,Antwerp-Bruges,Netherlands,Shippers,17.20249207,20.862,17.432,15.48
+93,Port Klang,Malaysia,Shippers,19.5992526,16.226,13.074,15.0445
+94,Xiamen,China,Shippers,18.57145407,20.862,17.432,15.3112
+95,Tanjung Pelepas,Malaysia,Shippers,22.50667183,18.544,15.253,13.4165
+96,Los Angeles,USA,Shippers,17.71889163,20.862,19.611,11.6431
+97,New York and New Jersey,USA,Shippers,21.864535,16.226,19.611,13.082
+98,Kaohsiung,China,Shippers,18.55172667,20.862,17.432,16.4918
+99,Long Beach,USA,Shippers,21.66626467,20.862,19.611,11.3836
+100,Laem Chabang,USA,Shippers,18.61349933,20.862,17.432,14.0754

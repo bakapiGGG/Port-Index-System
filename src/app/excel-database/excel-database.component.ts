@@ -14,6 +14,9 @@ interface DataRow {
 export class ExcelDatabaseComponent {
   // Existing properties and methods
 
+  rowData: any[] = [];
+  csvBlob: Blob | null = null;
+
   constructor(private http: HttpClient) {}
 
   onFileSelected(event: Event) {
@@ -24,65 +27,71 @@ export class ExcelDatabaseComponent {
 
       reader.onload = (e: any) => {
         const csvData = e.target.result;
-        // this.processCSV(csvData);
+        this.processCSV(csvData);
+        this.storeCSVInBlob(csvData);
+        this.fetchCSV();
+        // console.log(csvData); 
       };
 
       reader.readAsText(file);
     }
   }
 
-  // processCSV(csvData: string) {
-  //   let parsedData = Papa.parse(csvData, {
-  //     header: true,
-  //     skipEmptyLines: true,
-  //   }).data as DataRow[];
-
-  //   // Convert 'Efficiency', 'Smartness', 'Greenness', and 'Resilience' values to numbers
-  //   parsedData = parsedData.map((row: DataRow) => ({
-  //     ...row,
-  //     Efficiency: Number(row['Efficiency']),
-  //     Smartness: Number(row['Smartness']),
-  //     Greenness: Number(row['Greenness']),
-  //     Resilience: Number(row['Resilience']),
-  //   }));
-
-  //   this.rowData = parsedData;
-
-  //   // Log the result
-  //   console.log('Parsed data:', parsedData);
-  //   console.log('Row data:', this.rowData);
-  //   console.log('Column definitions:', this.columnDefs);
-
-  //   // Trigger fetchCSV to update the dashboard
-  //   this.fetchCSV();
-  // }
-
   fetchCSV() {
-    this.http.get('assets/data_final.csv', { responseType: 'text' }).subscribe(
-      (data) => {
-        let parsedData = Papa.parse(data, {
-          header: true,
-          skipEmptyLines: true,
-        }).data as DataRow[];
-
-        // Convert 'Efficiency', 'Smartness', 'Greenness', and 'Resilience' values to numbers
-        parsedData = parsedData.map((row: DataRow) => ({
-          ...row,
-          Efficiency: Number(row['Efficiency']),
-          Smartness: Number(row['Smartness']),
-          Greenness: Number(row['Greenness']),
-          Resilience: Number(row['Resilience']),
-        }));
-
-        // this.rowData = parsedData;
-
-        // // Log the result
-        // console.log('Parsed data:', parsedData);
-        // console.log('Row data:', this.rowData);
-        // console.log('Column definitions:', this.columnDefs);
-      },
-      (err) => console.error(err)
-    );
+    if (this.csvBlob) {
+      console.log('Fetching CSV from Blob...');
+      this.readCSVFromBlob();
+    } else {
+      console.log('Fetching CSV from assets folder...');
+      this.http.get('assets/database.csv', { responseType: 'text' }).subscribe(
+        (data) => {
+          this.processCSV(data);
+        },
+        (err) => console.error(err)
+      );
+    }
   }
+
+  processCSV(csvData: string) {
+    let parsedData = Papa.parse(csvData, {
+      header: true,
+      skipEmptyLines: true,
+    }).data as DataRow[];
+
+    // Convert 'Efficiency', 'Smartness', 'Greenness', and 'Resilience' values to numbers
+    parsedData = parsedData.map((row: DataRow) => ({
+      ...row,
+      Efficiency: Number(row['Efficiency']),
+      Smartness: Number(row['Smartness']),
+      Greenness: Number(row['Greenness']),
+      Resilience: Number(row['Resilience']),
+    }));
+
+    this.rowData = parsedData;
+
+    // Log the result
+    console.log('Parsed data:', parsedData);
+    console.log('Row data:', this.rowData);
+  }
+
+  storeCSVInBlob(csvData: string) {
+    this.csvBlob = new Blob([csvData], { type: 'text/csv' });
+    console.log('CSV data stored in Blob:', this.csvBlob);
+  }
+
+  readCSVFromBlob() {
+    if (this.csvBlob) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const csvData = e.target.result;
+        this.processCSV(csvData);
+      };
+      reader.readAsText(this.csvBlob);
+    } else {
+      console.log('No CSV Blob available to read.');
+    }
+  }
+
+  
 
 }
