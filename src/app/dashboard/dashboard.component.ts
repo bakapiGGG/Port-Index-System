@@ -448,7 +448,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = false;
     this.selectedIndicator = 'Indicators: Efficiency';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
-    this.gridApi.setColumnsVisible(['avg_score'], false);
+    // this.gridApi.setColumnsVisible(['avg_score'], false);
     // this.gridApi.setColumnsVisible(['Country'], true); 
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
@@ -466,7 +466,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = false;
     this.selectedIndicator = 'Indicators: Smartness';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
-    this.gridApi.setColumnsVisible(['avg_score'], false);
+    // this.gridApi.setColumnsVisible(['avg_score'], false);
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       // defaultState: { sort: null },
@@ -484,7 +484,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = false;
     this.selectedIndicator = 'Indicators: Greenness';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
-    this.gridApi.setColumnsVisible(['avg_score'], false);
+    // this.gridApi.setColumnsVisible(['avg_score'], false);
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       defaultState: { sort: null },
@@ -501,7 +501,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = true;
     this.selectedIndicator = 'Indicators: Resilience';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
-    this.gridApi.setColumnsVisible(['avg_score'], false);
+    // this.gridApi.setColumnsVisible(['avg_score'], false);
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       defaultState: { sort: null },
@@ -529,7 +529,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   setSMC() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.selectedStakeholder = 'Stakeholder: Ship Management Companies';
     if (this.gridApi) {
       // console.log('Setting columns visible');
@@ -551,7 +551,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   setRegulator() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.selectedStakeholder = 'Stakeholder: Regulators';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
@@ -565,7 +565,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   setLogisticsPartners() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.selectedStakeholder = 'Stakeholder: Logistics Partners';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
@@ -579,7 +579,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   setPortOperations() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.selectedStakeholder = 'Stakeholder: Port Operators';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
@@ -593,7 +593,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   setShippers() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.selectedStakeholder = 'Stakeholder: Shippers';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
@@ -607,7 +607,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   clearStakeholders() {
-    this.clearIndicators();
+    // this.clearIndicators();
     this.gridApi.refreshCells();
     this.selectedStakeholder = 'Stakeholder';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
