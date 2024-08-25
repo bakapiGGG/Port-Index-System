@@ -34,21 +34,6 @@ interface DataRow {
 export class DashboardComponent implements OnInit, OnDestroy {
   @ViewChild('efficiencyModal') efficiencyModal!: ElementRef;
 
-  // uniqueContainerPorts: string[] = [
-  //   'Singapore (Singapore)',
-  //   'Shanghai (China)',
-  //   'Rotterdam (Netherlands)',
-  //   'Antwerp (Belgium)',
-  //   'Busan (South Korea)',
-  //   'Ningbo-Zhoushan (China)',
-  //   'Shenzhen (China)',
-  //   'Los Angeles (United States)',
-  //   'Hong Kong (China)',
-  //   'Dubai (United Arab Emirates)',
-  //   'Los Angeles (United States)',
-  //   'Hamburg (Germany)',
-  // ];
-
   uniqueContainerPorts: string[] = [
     'Shanghai',
     'Singapore',
@@ -70,8 +55,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     'New York and New Jersey',
     'Long Beach',
     'Laem Chabang',
-    'Singapore'
-
+    'Singapore',
   ];
 
   csvBlob: Blob | null = null;
@@ -96,7 +80,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }
       return { component: 'agGroupCellRenderer' };
     },
-    
   };
   @Output() modalOpened = new EventEmitter<void>();
 
@@ -114,16 +97,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     if (this.counter % 4 == 1) {
       // return "Efficiency" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1)  + '%' + '\n\n' + 'E';
+      return params.value.toFixed(1) + '%' + '\n\n' + 'E';
     } else if (this.counter % 4 == 2) {
       // return "Smartness" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1)  + '%' + '\n\n' + 'S';
+      return params.value.toFixed(1) + '%' + '\n\n' + 'S';
     } else if (this.counter % 4 == 3) {
       // return "Greenness" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1)  + '%' + '\n\n' + 'G';
+      return params.value.toFixed(1) + '%' + '\n\n' + 'G';
     } else {
       // return "Resilience" + '\n' + params.value.toFixed(2);
-      return params.value.toFixed(1)  + '%' + '\n\n' + 'R';
+      return params.value.toFixed(1) + '%' + '\n\n' + 'R';
     }
   };
 
@@ -149,12 +132,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
     {
       headerName: 'Rank',
       field: 'Rank',
-      valueGetter: 'node.rowIndex + 1',
+      // valueGetter: 'node.rowIndex + 1', // Static
+      valueGetter: (params) => {
+        if (params.node && params.node.rowIndex !== null) {
+
+          return params.node.rowIndex + 1;
+        }
+        return null;
+      },
+
       width: 50,
     },
     { field: 'ID', headerName: 'ID', hide: true },
     { field: 'Name', headerName: 'Name', hide: true },
-    
+
     {
       field: 'City',
       headerName: 'City',
@@ -169,28 +160,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
       filter: true,
       hide: true,
     },
-    // {
-    //   field: 'Country',
-    //   headerName: 'Country',
-    //   rowGroup: false,
-    //   filter: true,
-    //   hide: false,
-    // },
-    { 
-      headerName: 'Score',
+
+    {
+      headerName: 'Total Score',
       field: 'avg_score',
+      sortingOrder: ['asc', 'desc'],
       colId: 'avg_score',
-      width: 50,
+      width: 150,
       valueGetter: (params) => {
         const efficiency = Number(params.getValue('Efficiency')) || 0;
         const smartness = Number(params.getValue('Smartness')) || 0;
         const greenness = Number(params.getValue('Greenness')) || 0;
         const resilience = Number(params.getValue('Resilience')) || 0;
-        // const weightedAverage =
-        //   3.3673 * efficiency +
-        //   2.7551 * smartness +
-        //   1.99 * greenness +
-        //   1.878 * resilience;
 
         const weightedAverage = efficiency + smartness + greenness + resilience;
 
@@ -202,28 +183,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         // console.log('efficiencySum:', efficiencySum);
         // console.log(params);
 
-        // For the original spreadsheet with name one
-        // if (this.calculateEfficiencyOnly) {
-        //   // return efficiency;
-        //   const efficiencySum = Number(params.getValue('SumEfficiency')) || 0;
-        //   return efficiencySum;
-        // } else if (this.calculateSmartnessOnly) {
-        //   const smartnessSum = Number(params.getValue('SumSmartness')) || 0;
-        //   return smartnessSum;
-        //   // return smartness;
-        // } else if (this.calculateGreennessOnly) {
-        //   const greennessSum = Number(params.getValue('SumGreenness')) || 0;
-        //   return greennessSum;
-        //   // return greenness;
-        // } else if (this.calculateResilienceOnly) {
-        //   const resilienceSum = Number(params.getValue('SumResilience')) || 0;
-        //   return resilienceSum;
-        //   // return resilience;
-        // } else {
-        //   return weightedAverage;
-        // }
-
-        // For the latest spreadsheet 
+        // For the latest spreadsheet
         if (this.calculateEfficiencyOnly) {
           // return efficiency;
           const efficiencyAvg = Number(params.getValue('AvgEfficiency')) || 0;
@@ -240,7 +200,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
         } else {
           return weightedAverage;
         }
-
       },
       valueFormatter: (params) => params.value.toFixed(2),
       sort: 'desc',
@@ -250,7 +209,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       headerName: 'Chart',
       field: 'sparkline',
       colId: 'score',
-      width: 42,
+      width: 60,
       cellRenderer: 'agSparklineCellRenderer',
       cellRendererParams: {
         sparklineOptions: {
@@ -280,13 +239,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
       valueGetter: (params) => {
         // console.log(params); // Debug purposes
 
+        // const filterModel = params.api.getFilterModel();
+        // const stakeholderFilter = filterModel['Stakeholder']?.values?.[0];
+
+        // console.log('Stakeholder filter:', stakeholderFilter);
+
         const values: any = [
           ['Efficiency', params.getValue('Efficiency').value],
           ['Smartness', params.getValue('Smartness').value],
           ['Greenness', params.getValue('Greenness').value],
           ['Resilience', params.getValue('Resilience').value],
         ];
-        // console.log("The value you get", values); // Debugging purposes
         return values;
       },
     },
@@ -304,10 +267,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
       aggFunc: 'avg',
       hide: true,
     },
-    { field: 'Efficiency', colId: 'SumEfficiency', aggFunc: 'sum', hide: true },
-    { field: 'Smartness', colId: 'SumSmartness', aggFunc: 'sum', hide: true },
-    { field: 'Greenness', colId: 'SumGreenness', aggFunc: 'sum', hide: true },
-    { field: 'Resilience', colId: 'SumResilience', aggFunc: 'sum', hide: true },
+    // { field: 'Efficiency', colId: 'SumEfficiency', aggFunc: 'sum', hide: true },
+    // { field: 'Smartness', colId: 'SumSmartness', aggFunc: 'sum', hide: true },
+    // { field: 'Greenness', colId: 'SumGreenness', aggFunc: 'sum', hide: true },
+    // { field: 'Resilience', colId: 'SumResilience', aggFunc: 'sum', hide: true },
     { field: 'Efficiency', colId: 'AvgEfficiency', aggFunc: 'avg', hide: true },
     { field: 'Smartness', colId: 'AvgSmartness', aggFunc: 'avg', hide: true },
     { field: 'Greenness', colId: 'AvgGreenness', aggFunc: 'avg', hide: true },
@@ -369,8 +332,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     window.removeEventListener('resize', this.onWindowResize.bind(this));
   }
-
-  
 
   onWindowResize() {
     this.zone.run(() => {
@@ -449,7 +410,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.selectedIndicator = 'Indicators: Efficiency';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
     // this.gridApi.setColumnsVisible(['avg_score'], false);
-    // this.gridApi.setColumnsVisible(['Country'], true); 
+    // this.gridApi.setColumnsVisible(['Country'], true);
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       // defaultState: { sort: null },
@@ -501,7 +462,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.calculateResilienceOnly = true;
     this.selectedIndicator = 'Indicators: Resilience';
     this.gridApi.setColumnsVisible(['score'], false); // Hide the score column
-    // this.gridApi.setColumnsVisible(['avg_score'], false);
+    this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.applyColumnState({
       state: [{ colId: 'avg_score', sort: 'desc' }],
       defaultState: { sort: null },
@@ -509,11 +470,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.gridApi.onSortChanged();
     this.gridApi.refreshCells();
     this.gridApi.sizeColumnsToFit();
-
   }
 
   setShipliner() {
-    this.selectedStakeholder = 'Stakeholder: Shipliner';
+    this.selectedStakeholder = 'Stakeholders: Shipliner';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
@@ -530,7 +490,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setSMC() {
     // this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Ship Management Companies';
+    this.selectedStakeholder = 'Stakeholders: Ship Management Companies';
     if (this.gridApi) {
       // console.log('Setting columns visible');
       this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
@@ -552,7 +512,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setRegulator() {
     // this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Regulators';
+    this.selectedStakeholder = 'Stakeholders: Regulators';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
@@ -566,7 +526,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setLogisticsPartners() {
     // this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Logistics Partners';
+    this.selectedStakeholder = 'Stakeholders: Logistics Partners';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
@@ -580,7 +540,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setPortOperations() {
     // this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Port Operators';
+    this.selectedStakeholder = 'Stakeholders: Port Operators';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
@@ -594,7 +554,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setShippers() {
     // this.clearIndicators();
-    this.selectedStakeholder = 'Stakeholder: Shippers';
+    this.selectedStakeholder = 'Stakeholders: Shippers';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({
@@ -609,7 +569,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   clearStakeholders() {
     // this.clearIndicators();
     this.gridApi.refreshCells();
-    this.selectedStakeholder = 'Stakeholder';
+    this.selectedStakeholder = 'Stakeholders';
     this.gridApi.setColumnsVisible(['score'], true); // Unhide the score column
     this.gridApi.setColumnsVisible(['avg_score'], true);
     this.gridApi.setFilterModel({ Stakeholder: null });
@@ -651,9 +611,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.rowData = parsedData;
 
     // Log the result
-    console.log('Parsed data:', parsedData);
-    console.log('Row data:', this.rowData);
-    console.log('Column definitions:', this.columnDefs);
+    // console.log('Parsed data:', parsedData);
+    // console.log('Row data:', this.rowData);
+    // console.log('Column definitions:', this.columnDefs);
   }
 
   readCSVFromBlob() {
@@ -668,33 +628,4 @@ export class DashboardComponent implements OnInit, OnDestroy {
       console.log('No CSV Blob available to read.');
     }
   }
-
-  // fetchCSV() {
-  //   // this.http.get('assets/data_final.csv', { responseType: 'text' }).subscribe(
-  //     this.http.get('assets/database.csv', { responseType: 'text' }).subscribe(
-  //     (data) => {
-  //       let parsedData = Papa.parse(data, {
-  //         header: true,
-  //         skipEmptyLines: true,
-  //       }).data as DataRow[];
-  //       // Convert 'Efficiency', 'Smartness', 'Greenness', and 'Resilience' values to numbers
-  //       parsedData = parsedData.map((row: DataRow) => ({
-  //         ...row,
-  //         Efficiency: Number(row['Efficiency']),
-  //         Smartness: Number(row['Smartness']),
-  //         Greenness: Number(row['Greenness']),
-  //         Resilience: Number(row['Resilience']),
-  //       }));
-
-  //       this.rowData = parsedData;
-
-  //       // Log the result
-  //       console.log('Parsed data:', parsedData);
-  //       console.log('Row data:', this.rowData);
-  //       console.log('Column definitions:', this.columnDefs);
-  //       // console.log('Data type of first cell in Greenness column:', typeof this.rowData[0]['Greenness'], this.rowData[0]['Greenness']);
-  //     },
-  //     (err) => console.error(err)
-  //   );
-  // }
 }
