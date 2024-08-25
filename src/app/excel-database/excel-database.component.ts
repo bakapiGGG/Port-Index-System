@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Papa from 'papaparse';
 
@@ -11,13 +11,26 @@ interface DataRow {
   templateUrl: './excel-database.component.html',
   styleUrl: './excel-database.component.css'
 })
-export class ExcelDatabaseComponent {
+export class ExcelDatabaseComponent implements OnInit {
   // Existing properties and methods
 
   rowData: any[] = [];
   csvBlob: Blob | null = null;
 
   constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    // Add event listener to the menu item
+    const uploadExcelMenuItem = document.getElementById('uploadExcelMenuItem');
+    if (uploadExcelMenuItem) {
+      uploadExcelMenuItem.addEventListener('click', () => {
+        const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+        if (fileInput) {
+          fileInput.click();
+        }
+      });
+    }
+  }
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
