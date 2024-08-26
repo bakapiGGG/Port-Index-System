@@ -70,6 +70,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   enableCharts = true;
   autoGroupColumnDef = {
     headerName: 'Container Port',
+    sortable: false,
     cellRendererParams: {
       suppressCount: true,
       showOpenedGroup: true,
@@ -131,15 +132,25 @@ export class DashboardComponent implements OnInit, OnDestroy {
   columnDefs: ColDef[] = [
     {
       headerName: 'Rank',
+      sortingOrder: ['asc', 'desc'],
       field: 'Rank',
-      // valueGetter: 'node.rowIndex + 1', // Static
+      sortable: false, // Disable sorting for this column
       valueGetter: (params) => {
         if (params.node && params.node.rowIndex !== null) {
-
           return params.node.rowIndex + 1;
         }
         return null;
       },
+      
+      
+      // valueGetter: 'node.rowIndex + 1', // Static
+      // valueGetter: (params) => {
+      //   if (params.node && params.node.rowIndex !== null) {
+
+      //     return params.node.rowIndex + 1;
+      //   }
+      //   return null;
+      // },
 
       width: 50,
     },
@@ -166,6 +177,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       field: 'avg_score',
       sortingOrder: ['asc', 'desc'],
       colId: 'avg_score',
+      sortable: false, // Disable sorting for this column
       width: 150,
       valueGetter: (params) => {
         const efficiency = Number(params.getValue('Efficiency')) || 0;
@@ -210,6 +222,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       field: 'sparkline',
       colId: 'score',
       width: 60,
+      sortable: false, // Disable sorting for this column
       cellRenderer: 'agSparklineCellRenderer',
       cellRendererParams: {
         sparklineOptions: {
